@@ -3,9 +3,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Wrapper } from './styles';
+import Header from '../../../components/Header';
 
 export default function DefaultLayaut({ children }) {
-  return <Wrapper>{children}</Wrapper>;
+  console.log(children);
+  return (
+    <Wrapper>
+      <Header page={children.type.name} />
+      {children}
+    </Wrapper>
+  );
 }
 
 DefaultLayaut.propTypes = {
